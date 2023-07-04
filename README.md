@@ -16,6 +16,7 @@ make build
 make db-create
 make migrate
 make seed
+make up
 ```
 
 ## API Endpoints
@@ -32,7 +33,7 @@ http://localhost:4001
 | ------------------ | ------------------------------ |
 | make up            | docker起動           |
 | make down          | docker停止          |
-| make build         |                    |
+| make build         | dockerのセットアップ                   |
 | make db-create          | db作成 |
 | make migrate | migrationを実行       |
 | make seed  | seedデータの注入        |
