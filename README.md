@@ -1,25 +1,41 @@
+# 09-backend
+
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+## 環境構築
 
-Things you may want to cover:
+* リポジトリをcloneする
 
-* Ruby version
+### docker setup
 
-* System dependencies
+* .env.localからDB関係の記述を削除する（空白文字が読み込まれてしまうため）
+* dockerのビルド、DB作成を行い、コンテナを起動する
 
-* Configuration
+```bash
+make build
+make db-create
+make migrate
+make seed
+```
 
-* Database creation
+## API Endpoints
 
-* Database initialization
+```
+http://localhost:4001
+```
 
-* How to run the test suite
+## command
 
-* Services (job queues, cache servers, search engines, etc.)
+- Makefile 参照
 
-* Deployment instructions
-
-* ...
-# 09-backend
+| コマンド            | 機能                           |
+| ------------------ | ------------------------------ |
+| make up            | docker起動           |
+| make down          | docker停止          |
+| make build         |                    |
+| make db-create          | db作成 |
+| make migrate | migrationを実行       |
+| make seed  | seedデータの注入        |
+| make migrate-reset   | dbの再生成とmigrationの実行       |
+| make console   | railsのコンソール起動       |
+| make routes   | ルーティングの確認       |
